@@ -16,7 +16,7 @@ object ScalaOption {
     case None => println("That didn't work.")
   }
 
-  def getAddressLine2(customer: Option[ScalaCustomer]) = customer.map(customer => customer.shippingAddress.map(address => address.addressLine2)).getOrElse("")
+  def getAddressLine2(customer: Option[ScalaCustomer]) = customer.map(customer => customer.shippingAddress.map(address => address.addressLine2.getOrElse("")).getOrElse("")).getOrElse("")
 
   def nullManipulation() {
     var foo: String = "Foo"
