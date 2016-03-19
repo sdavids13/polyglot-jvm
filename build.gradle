@@ -1,0 +1,35 @@
+group 'com.sdavids'
+version '1.0-SNAPSHOT'
+
+
+buildscript {
+    ext {
+        kotlinVersion = '1.0.1'
+        scalaVersion = '2.11.8'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
+    compile "org.scala-lang:scala-library:${scalaVersion}"
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.github.stefanbirkner:system-rules:1.9.0'
+
+}
